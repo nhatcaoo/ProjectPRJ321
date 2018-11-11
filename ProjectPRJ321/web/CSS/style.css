@@ -1,0 +1,247 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+    background-color: #ededed;
+}
+#main-container{
+    /*top: 0;*/
+    width: 75%;
+    margin: 0 auto;
+    background-color : #f68c1f;
+    display: grid;  
+    border-radius: 0px 0px 15px 15px;
+    /*border: 1px solid white;*/
+    box-shadow: 0 0 24px rgba(0,0,0,.8);
+    margin-bottom: 5%;
+    
+}
+
+#nav-brand{
+	font-family: 'Times New Roman',Helvetica,Arial,sans-serif;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 1%;
+    color: white;
+}
+
+#brand-name{
+    font-size: 47px;
+    padding-top: 7px;
+    font-weight: 400;
+}
+
+#brand-welcome{
+    font-size:22px;
+}
+
+#nav-bar{
+    background-color: #890400;
+    bottom: 0;
+    display: grid;
+    font-weight: 400;
+}
+
+#nav-bar ul{
+    list-style: none;
+    margin: 0;
+    padding-top: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 9px;
+}
+
+#nav-bar li{
+    display: inline;
+    padding-right: 30px;
+}
+
+#nav-bar a{
+    color: white;
+    text-decoration: none;
+    font-size:16px;
+
+}
+
+.active-link{
+    font-weight: 700;
+}
+
+#nav-bar a:hover{
+    text-decoration: underline;
+}
+
+#content{
+	background-color: white;
+}
+
+#left-content{
+	margin: 0;
+	width: 75%;
+	float: left;
+	padding-left: 15px;
+}
+
+#left-first-content{
+    padding-top: 30px;
+    display: inline-block;
+}
+
+#left-first-content-img{
+    width: 22%;
+    float: left;
+    padding-left: 5px;
+}
+
+#left-first-content-img img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+#first-content{
+    width: 75%;
+    float: right;
+}
+
+#first-content-title{
+    font-size: 24px;
+    font-family: georgia, palatino;
+    padding-bottom: 10px;
+}
+
+#cake-list{
+    margin-top: 15px;
+    padding-top: 40px;
+    border-top-style: dotted;
+    border-top-color: #ccc;
+}
+
+.cake{
+    margin: 0;
+    padding: 0;
+    width: 48%;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+.cake-img img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cake-title{
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Times New Roman',Helvetica,Arial,sans-serif;
+}
+
+#contact{
+    margin-top: 15px;
+    padding-top: 35px;
+    border-top-style: dotted;
+    border-top-color: #ccc;
+}
+
+#contact-title{
+     font-size: 22px;
+    font-weight: 400;
+    font-family: 'Times New Roman',Helvetica,Arial,sans-serif;
+}
+
+#signature{
+     margin-top: 15px;
+    padding-top: 35px;
+    padding-bottom: 50px;
+    border-top-style: dotted;
+    border-top-color: #ccc;
+}
+
+#sign{
+    font-family: 'Dancing Script',serif;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+#right-content{
+	margin:0;
+	width: 20%;
+	float: right;
+	padding-right: 15px;
+}
+
+.right-box{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+}
+
+.right-box-title {
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+.right-box-text p{
+	padding-left: 10px;
+} 
+
+.right-box-link{
+	text-align: center;
+	padding-bottom: 10px
+}
+.right-box-link a:hover{
+	background-color: #2b796e;
+}
+
+.right-box-content ul{
+	list-style: none;
+	list-style-type: none;
+	padding: 0; /* new  */
+}
+
+.btn-link{
+	padding: 4px 12px;
+	border-radius: 18px;
+	background-color: #3fb1a2;
+	text-decoration: none;
+	color:white;
+}
+
+/* new  */
+
+.right-box-content li{
+    padding-left: 15px;
+}
+
+.right-box-content li img{
+    padding-right: 5px;
+}
+
+/*   */
+
+
+.right-box-content a{
+	color: black;
+}
+
+
+
+#footer{
+	background-color: white;
+    border-radius: 0px 0px 15px 15px;
+}
+
+#footer-content{
+	width: 95%;
+	border-top:1px solid #ccc;
+	margin: 0 auto;
+	padding-bottom: 20px;
+
+}
+
+#footer-content a{
+	color:black;
+	font-size: 13.6px;
+}
