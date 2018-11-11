@@ -13,10 +13,6 @@
         <servlet-class>Controller.SearchController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoginController</servlet-name>
-        <servlet-class>Controller.LoginController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>SigninController</servlet-name>
         <servlet-class>Controller.SigninController</servlet-class>
     </servlet>
@@ -48,6 +44,10 @@
         <servlet-name>AdminUser</servlet-name>
         <servlet-class>AdminController.AdminUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>AdminController.LoginController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePage</servlet-name>
         <url-pattern>/HomePage</url-pattern>
@@ -59,10 +59,6 @@
     <servlet-mapping>
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/SearchController</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoginController</servlet-name>
-        <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SigninController</servlet-name>
@@ -95,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>AdminUser</servlet-name>
         <url-pattern>/AdminUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

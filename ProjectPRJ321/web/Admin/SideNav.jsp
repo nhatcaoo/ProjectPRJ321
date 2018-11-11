@@ -22,16 +22,16 @@
         
          <div class="sidenav">
             <div class="row">
-                <div class="col-sm-4"> <img src="../images/cactus1.jpg" class="avatar"/></div>
+                <div class="col-sm-4"> <img src="../images/Mocha.jpg" class="avatar"/></div>
                 <div class="col-sm-8" id="ava_name">
-                    <h3>Hello</h3>
+                    <h3>Admin</h3>
                     <h3>${sessionScope.username} !!</h3>
                 </div>
             </div>
-                <a href="AdminBooking.jsp">Booking</a>    
+                   
             <a href="AdminProduct.jsp" >Product</a>       
             <a href="AdminUser.jsp">User</a>            
-              <a href="AdminContact.jsp" style="float: bottom">Contact</a>
+      
               
         </div>
         
