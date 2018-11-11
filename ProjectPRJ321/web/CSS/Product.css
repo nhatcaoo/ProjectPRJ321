@@ -9,14 +9,13 @@ body, html{
     width: 75%;
     margin: 0 auto;
     background-color : #dbdada;
-    display: grid;  
+    display:grid;
     border-radius: 0px 0px 15px 15px;
     /*border: 1px solid white;*/
     box-shadow: 0 0 24px rgba(0,0,0,.8);
     margin-bottom: 5%;
     
 }
-
 
 
 .active-link{
@@ -36,51 +35,41 @@ body, html{
 	width: 75%;
 	float: left;
 	padding-left: 15px;
+    padding-bottom: 50px;
 }
 
 #left-first-content{
-    padding-top: 30px;
-    display: inline-block;
+    padding-top: 20px;
 }
 
-#left-first-content-img{
-    
-
-    width: 40%;
-    float: left;
-    padding-left: 5px;
+#left-first-content{
+    padding-top: 20px;
 }
 
-#left-first-content-img img{
-    width: 100%;
-    border-radius: 8px;
-}
-
-#first-content{
-    width: 75%;
-    float: right;
-    padding-left: 200px;
-    padding-top: 0px;
-}
-
-#first-content-title{
-    font-size: 24px;
-    font-family: georgia, palatino;
+#title-first-content{
+    font-size: 28px;
+    line-height: 32.8px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
-#cake-list{
-    margin-top: 15px;
-    padding-top: 40px;
-    border-top-style: dotted;
-    border-top-color: #ccc;
+.cake-first{
+    padding-top: 30px;
+    display: inline-block;
+    padding-bottom: 30px;
 }
 
 .cake{
-    margin: 0;
-    padding: 0;
-    width: 48%;
-    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top-style: dotted;
+    border-top-color: #ccc;
+    display: inline-block;
+}
+
+.cake-img{
+    width: 20%;
+    float: left;
     display: inline-block;
 }
 
@@ -89,37 +78,77 @@ body, html{
     border-radius: 8px;
 }
 
+.cake-content{
+    width: 75%;
+    float:left;
+    padding-left: 20px; 
+    display: inline-block;
+}
+
 .cake-title{
-    font-size: 22px;
-    font-weight: 400;
-    font-family: 'Times New Roman',Helvetica,Arial,sans-serif;
+    font-size: 24px;
 }
 
-#contact{
-    margin-top: 15px;
-    padding-top: 35px;
-    border-top-style: dotted;
-    border-top-color: #ccc;
+.cake-title a{
+    color:black;
+}
+.cake-title a:visited{
+    color:black;
 }
 
-#contact-title{
-     font-size: 22px;
-    font-weight: 400;
-    font-family: 'Times New Roman',Helvetica,Arial,sans-serif;
+.cake-description{
+    padding-top: 5px;
+    font-size: 16px;
 }
 
-#signature{
-     margin-top: 15px;
-    padding-top: 35px;
-    padding-bottom: 50px;
-    border-top-style: dotted;
-    border-top-color: #ccc;
+.cake-list{
+    width: 30%;
+    padding-top:20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    display: inline-block;
 }
 
-#sign{
-    font-family: 'Dancing Script',serif;
-    font-size: 40px;
-    line-height: 60px;
+.cake-list img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cake-list a{
+    color:black;
+    font-size: 20px;
+}
+
+.title{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.description{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#paging{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+#paging a{
+    text-decoration: none;  
+    color: black;
+}
+
+#paging a:visited{
+    color:black;
+}
+
+.current-page{
+    font-weight: 700;
+    font-size: 25px;
 }
 
 #right-content{

@@ -46,8 +46,8 @@ public class ProductBean {
               String fullDescription = rs.getString(5);
             String imageName = rs.getString(6);
            
-            int catalogueID = rs.getInt(7);
-            ls.add(new CafeProductModel(pid, pname, price, shortDescription,fullDescription, price, catalogueID));
+           
+            ls.add(new CafeProductModel(pid, pname, price, shortDescription,fullDescription, imageName));
 
         }
         return ls;
@@ -60,18 +60,18 @@ public class ProductBean {
         conn.close();
     }
 
-    public void UpdateProduct(int pid, String pname, String price, String imgName, int catalogueID, String shortDesc,String fullDesc) throws Exception {
+    public void UpdateProduct(int pid, String pname, String price, String imgName, String shortDesc,String fullDesc) throws Exception {
         Connection conn = new DBContext().getConnection();
-        String query = "update CafeProduct\n"
-                + "set productName='" + pname + "', productPrice= " + price + ", productImage='" + imgName + "',productShortDescription='" + shortDesc +  "',productFullDescription='" + fullDesc +"', catalogueID= " + catalogueID + "\n"
-                + "where productID= " + pid;
+        String query = "update [CafeProduct]\n" +
+" set productName= '" +pname +  " ' , productPrice= "+ price +" , productImage='"+imgName+"',productShortDescription=' "+shortDesc+" ',productFullDescription=' "+fullDesc+"'\n" +
+"                where productID=" + pid;
         conn.prepareStatement(query).executeUpdate();
         conn.close();
     }
     
-    public void InsertProduct(int pid, String pname, String price, String imgName, int catalogueID, String shortDesc,String fullDesc) throws Exception{
+    public void InsertProduct(int pid, String pname, String price, String imgName, String shortDesc,String fullDesc) throws Exception{
          Connection conn = new DBContext().getConnection();
-         String query="insert into CafeProduct values(?,?,?,?,?,?,?)";
+         String query="insert into CafeProduct values(?,?,?,?,?,?)";
         PreparedStatement pr = conn.prepareStatement(query);
         pr.setInt(1, pid);
         pr.setString(2, pname);
@@ -79,7 +79,7 @@ public class ProductBean {
         pr.setString(4, shortDesc);
         pr.setString(5, fullDesc);
         pr.setString(6, imgName);
-        pr.setInt(7, catalogueID);
+      
         pr.executeUpdate();
         conn.close();
     }

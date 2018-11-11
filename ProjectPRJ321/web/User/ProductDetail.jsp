@@ -5,7 +5,6 @@
 --%>
 
 <%@page import="Model.CafeProductModel"%>
-<
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -16,7 +15,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/CakeDetail.css">
+        <link rel="stylesheet" type="text/css" href="CSS/ProductDetail.css">
+        <link rel="stylesheet" type="text/css" href="CSS/header.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -37,6 +37,9 @@
                             <div id="cake-content">
                                 <%=product.getProductFullDescription()%>
                             </div>
+                            <div id="cake-price" style="color: blue">
+                                <%=product.getProductPrice()%> VNĐ
+                            </div>
                         </div>
                     </div>
 
@@ -45,12 +48,7 @@
 
             </div>
             <!-- Footer  -->
-            <div id="footer">
-                <div id="footer-content">
-
-                    <a href="#">Create with SimpleSite</a>
-                </div>
-            </div>
+            <%@include file="footer.jsp" %>
         </div>
     </body>
 </html>

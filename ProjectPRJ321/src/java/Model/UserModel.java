@@ -16,20 +16,12 @@ public class UserModel extends BaseModel {
     public UserModel() {
     }
 
-    public int getUserID() {
-        return userID;
-    }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
-    private int userID;
     private String useName;
     private String passWd;
     private String url;
 
-    public UserModel(int userID, String useName, String passWd, String url) {
-        this.userID = userID;
+    public UserModel(String useName, String passWd, String url) {
         this.useName = useName;
         this.passWd = passWd;
         this.url = url;

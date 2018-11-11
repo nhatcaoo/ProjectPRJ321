@@ -5,8 +5,11 @@
  */
 package AdminController;
 
+import bean.ProductBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,15 +35,28 @@ public class AdminProduct extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AdminProduct</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AdminProduct at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String submit = request.getParameter("submit");
+            if (submit == null) {
+                submit = "";
+            }
+            int pid = Integer.parseInt(request.getParameter("pid"));
+            String pname = request.getParameter("pname");
+            String price = request.getParameter("price");
+
+            String imgName = request.getParameter("imageName");
+            String shortDesc = request.getParameter("shortDesc");
+            String fullDesc = request.getParameter("fullDesc");
+
+            // int typeID = new adminBean.TypeProduct().getTypeID(typeName);
+            if (submit.equals("Update")) {
+
+                new ProductBean().UpdateProduct(pid, pname, price, imgName, shortDesc, fullDesc);
+            } else if (submit.equals("Insert")) {
+                new ProductBean().InsertProduct(pid, pname, price, imgName, shortDesc, fullDesc);
+            }
+            response.sendRedirect("Admin/AdminProduct.jsp");
+        } catch (Exception ex) {
+            Logger.getLogger(AdminProduct.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -30,10 +30,10 @@
             <h1 style="text-align: left; padding-bottom: 20px">View User</h1>
             <table border="1 solid black" style="table-layout: fixed" >
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Password</th>
                     <th>Url</th>
-                    <th colspan="2"></th>                   
+                                  
                 </tr>
                 <c:forEach var="s" items="${user.selectAll()}">
                     <tr>
@@ -41,13 +41,7 @@
                         <td>${s.passWd}</td>
                         <td>${s.url}</td>
                         
-                        <td>
-                            <c:url var="delete" value="AdminUser.jsp">
-                                <c:param name="action" value="delete"></c:param>
-                                <c:param name="userID" value="${s.userID}"></c:param>
-                            </c:url>
-                            <a href="${delete}">Delete </a>
-                        </td>
+                       
                     </tr>
 
 

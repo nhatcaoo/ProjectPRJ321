@@ -11,15 +11,7 @@ package Model;
  */
 public class CafeProductModel extends BaseModel{
 
-    public CafeProductModel(int productID, String productName, String productPrice, String productShortDescription,String productFullDescription, String productImage, int catalogueID) {
-        this.productID = productID;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productShortDescription = productShortDescription;
-        this.productFullDescription = productFullDescription;
-        this.productImage = productImage;
-        this.catalogueID = catalogueID;
-    }
+   
 
     public CafeProductModel() {
     }
@@ -27,26 +19,8 @@ public class CafeProductModel extends BaseModel{
     private String productName;
     private String productPrice;
     private String productShortDescription;
-    private String productFullDescription;
-    private  String productCatalogue;
-
-    public String getProductCatalogue() {
-        return productCatalogue;
-    }
-
-    public CafeProductModel(int productID, String productName, String productPrice, String productShortDescription, String productFullDescription, String productCatalogue, String productImage) {
-        this.productID = productID;
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.productShortDescription = productShortDescription;
-        this.productFullDescription = productFullDescription;
-        this.productCatalogue = productCatalogue;
-        this.productImage = productImage;
-    }
-
-    public void setProductCatalogue(String productCatalogue) {
-        this.productCatalogue = productCatalogue;
-    }
+    private String productFullDescription;  
+ private String productImage;
 
     public CafeProductModel(int productID, String productName, String productPrice, String productShortDescription, String productFullDescription, String productImage) {
         this.productID = productID;
@@ -56,8 +30,6 @@ public class CafeProductModel extends BaseModel{
         this.productFullDescription = productFullDescription;
         this.productImage = productImage;
     }
-    private String productImage;
-    private int catalogueID;
 
     public int getProductID() {
         return productID;
@@ -107,14 +79,5 @@ public class CafeProductModel extends BaseModel{
         this.productImage = productImage;
     }
 
-    public int getCatalogueID() {
-        return catalogueID;
-    }
-
-    public void setCatalogueID(int catalogueID) {
-        this.catalogueID = catalogueID;
-    }
-    
-    
-    
+   
 }

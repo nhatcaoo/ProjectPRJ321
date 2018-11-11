@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 10, 2018, 6:50:30 PM
+    Author     : This PC
+*/
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+    background-color: #ededed;
+}
+#main-container-header{
+    /*top: 0;*/
+    width: 75%;
+    margin: 0 auto;
+    background-color : #dbdada;
+    display: grid;  
+    border-radius: 0px 0px 15px 15px;
+    /*border: 1px solid white;*/
+    box-shadow: 0 0 24px rgba(0,0,0,.8);
+    margin-bottom: 5%;
+    
+}
+#nav-brand{
+    font-weight: bold;
+	color: white;
+    background: grey;
+    padding:190px;
+    text-align: center;
+    background-image: url(../images/cover.jpg);
+    background-attachment: inherit;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#brand-name{
+    font-size: 70px;
+    padding-top: 7px;
+    font-weight: 400;
+}
+
+#brand-welcome{
+    font-size:22px;
+}
+
+#nav-bar{
+    background-color: #890400;
+    bottom: 0;
+    display: grid;
+    font-weight: 400;
+}
+
+#nav-bar ul{
+    list-style: none;
+    margin: 0;
+    padding-top: 9px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 9px;
+}
+
+#nav-bar li{
+    display: inline;
+    padding-right: 30px;
+}
+
+#nav-bar a{
+    color: white;
+    text-decoration: none;
+    font-size:16px;
+
+}

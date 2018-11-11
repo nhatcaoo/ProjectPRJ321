@@ -37,7 +37,7 @@ public class ProductController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
          
             Vector<CafeProductModel> product = new Vector();
-            ProductDAO daoCake = new ProductDAO();
+            ProductDAO daoProduct = new ProductDAO();
 
             int page = 1;
             try {
@@ -45,18 +45,18 @@ public class ProductController extends HttpServlet {
             } catch (Exception e) {
                 page = 1;
             }
-            int tempPageNumber = daoCake.getNumberCake();//lay so san pham
+            int tempPageNumber = daoProduct.getNumberCake();//lay so san pham
             int numberOfPage = tempPageNumber / 3;
             if (tempPageNumber % 3 != 0) {
                 numberOfPage++;
             }
             int temp = 3 * page - 2;
 
-            product = daoCake.getCake(temp);   
+            product = daoProduct.getCake(temp);   
             request.setAttribute("Product", product);
             request.setAttribute("Page", page);
             request.setAttribute("NumberOfPage", numberOfPage);
-            getServletContext().getRequestDispatcher("/Product.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/User/Products.jsp").forward(request, response);
         } catch (Exception e) {
             System.out.println(e);
             response.sendRedirect("ErrorPage.jsp");

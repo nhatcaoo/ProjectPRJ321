@@ -17,30 +17,36 @@
     </head>
     <body>
         <jsp:include page="SideNav.jsp"></jsp:include>
+          <jsp:useBean id="product" class="bean.ProductBean"></jsp:useBean>
         <div class="main">
             <h1 style="text-align: left;padding-bottom: 20px">Insert Products</h1>
-            <form action="../ProductController">
+            <form action="../AdminProduct">
                 <table border="1 solid black" cellspacing="0" style="align-content: center">
+                  <tr>
+                        <th>ID</th>
+                        <td><input name="pid" value=""/></td>
+                    </tr>
                     <tr>
                         <th>Name</th>
                         <td><input name="pname" value=""/></td>
+                    </tr>
+                     <tr>
+                        <th>IMG Name</th>
+                        <td><input name="imageName" value=""/></td>
                     </tr>
                     <tr>
                         <th>Price</th>
                         <td><input name="price" value=""/></td>
                     </tr>
                     <tr>
-                        <th>Type</th>
-                        <td><input name="typeName" value=""/></td>
+                        <th>Short Description</th>
+                        <td><input name="shortDesc" value=""/></td>
                     </tr>
                     <tr>
-                        <th>Image name</th>
-                        <td><input name="imageName" value=""/></td>
+                        <th>Full Description</th>
+                        <td><input name="fullDesc" value=""/></td>
                     </tr>
-                    <tr>
-                        <th>Description</th>
-                        <td>​<textarea name="content" id="txtArea" rows="10" cols="70"></textarea></td>
-                    </tr>
+                    
                 </table>
                 <input type="submit" name="submit" value="Insert" style="margin-top: 20px;margin-bottom: 20px;padding: 10px"/> 
                 <input type="submit" name="submit" value="Cancel" style="margin-top: 20px;margin-bottom: 20px;padding: 10px"/> 

@@ -32,7 +32,7 @@
                         <th>short description</th>
                          <th>full description</th>
                         <th>Image Name</th>
-                        <th>Catalogue</th>
+                     
                         <th colspan="2"></th>
                     </tr>
                 <c:forEach var="k" items="${product.selectAllProduct()}">
@@ -44,7 +44,7 @@
                           <td><div class="crop">${k.productFullDescription}</div></td>
                         
                         <td>${k.productImage}</td>
-                        <td>${k.catalogueID}</td>  
+                      
                         <td>
                             <c:url var="updateProduct" value="UpdateProduct.jsp">
                                 <c:param name="pid" value="${k.productID}"></c:param>
@@ -54,7 +54,7 @@
                                   <c:param name="fullDesc" value="${k.productFullDescription}"></c:param>
                                 <c:param name="imageName" value="${k.productImage}"></c:param>
                                 
-                                <c:param name="catalogueID" value="${k.catalogueID}"></c:param>
+                               
                             </c:url>
                             <a href="${updateProduct}">Update</a>
                         </td>

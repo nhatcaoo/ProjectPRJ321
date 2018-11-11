@@ -21,7 +21,7 @@
             <a href=""></a>
             <div class="main">
                 <h1 style="text-align: left;padding-bottom: 20px">Update Products</h1>
-                <form action="../ProductController">
+                <form action="../AdminProduct">
                     <table border="1 solid black" cellspacing="0" >
                         <tr>
                             <th>ID</th>
@@ -37,20 +37,17 @@
                     </tr>
                     <tr>
                         <th>Short Description</th>
-                        <td><input name="typeName" value="${param.typeName}"/></td>
+                        <td><input name="shortDesc" value="${param.shortDesc}"/></td>
                     </tr>
                     <tr>
                         <th>Full Description</th>
-                        <td><input name="typeName" value="${param.typeName}"/></td>
+                        <td><input name="fullDesc" value="${param.fullDesc}"/></td>
                     </tr>
                     <tr>
                         <th>Image Name</th>
                         <td><input name="imageName" value="${param.imageName}"/></td>
                     </tr>
-                    <tr>
-                        <th>Description</th>
-                        <td>​<textarea name="content" id="txtArea" rows="20" cols="70" style="height: 100%"> ${param.content}</textarea></td>
-                    </tr>
+                   
 
                 </table>
                 <input type="submit" name="submit" value="Update" style="margin-top: 20px;margin-bottom: 20px;padding: 10px"/> 

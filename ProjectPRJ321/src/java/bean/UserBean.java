@@ -21,14 +21,14 @@ import java.util.List;
  */
 public class UserBean {
 
-    String userID;
+    String userName;
 
-    public String getUserID() {
-        return userID;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public List<UserModel> selectAll() throws Exception {
@@ -43,11 +43,11 @@ public class UserBean {
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()) {
-            int userID = rs.getInt(1);
-            String name = rs.getString(2);
+           
+            String name = rs.getString(1);
             String password = rs.getString(2);
             String url = rs.getString(3);
-            users.add(new UserModel(userID, name, password, url));
+            users.add(new UserModel( name, password, url));
 
         }
         rs.close();
@@ -57,7 +57,7 @@ public class UserBean {
 
     public void deleteUser() throws Exception {
         Connection conn = new DBContext().getConnection();
-        String query = "Delete USERS where user.userID=" + this.userID;
+        String query = "Delete USERS where userName=" + this.userName;
         conn.prepareStatement(query).executeUpdate();
         conn.close();
     }

@@ -48,8 +48,8 @@ public class ProductDAO {
                 String shortDescription = rs.getString(4);
                 String fullDescription = rs.getString(6);
                 //String urlImage = rs.getString(5); thay bằng dòng dưới
-                String urlImage = "images" + "/" + rs.getString(7);
-                vec.add(new CafeProductModel(id, price, price, shortDescription, fullDescription, urlImage));
+                String urlImage = "images" + "/" + rs.getString("productImage");
+                vec.add(new CafeProductModel(id, name, price, shortDescription, fullDescription, urlImage));
             }
           
         } catch (SQLException ex) {
@@ -61,12 +61,43 @@ public class ProductDAO {
         return vec;
 
     }
+public Vector<CafeProductModel> getCake(int i, int t) throws Exception {
+        Vector<CafeProductModel> vec = new Vector();
+        String sql = "WITH TblCte as (SELECT  *,ROW_NUMBER() OVER (ORDER BY productID) RowNumber FROM CafeProduct)\n" +
+"                SELECT  * FROM TblCte WHERE RowNumber between ? and ?";
+        try {
+            dbcon = new DBContext();
+            conn = dbcon.getConnection();
+            pre = conn.prepareStatement(sql);
+            pre.setInt(1, i);
+            pre.setInt(2, t);
+            rs = pre.executeQuery();
+            while (rs.next()) {
+               int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String price = rs.getString(3);
+               
+                String shortDescription = rs.getString(4);
+                String fullDescription = rs.getString(6);
+                //String urlImage = rs.getString(5); thay bằng dòng dưới
+                String urlImage = "images" + "/" + rs.getString("productImage");
+                vec.add(new CafeProductModel(id, name, price, shortDescription, fullDescription, urlImage));
+            }
+           
+        } catch (SQLException ex) {
+           
+           
+            throw ex;
+        }
 
+        return vec;
+
+    }
  
 
     public CafeProductModel getCakeDetail(int i) throws Exception {
         CafeProductModel vec = new CafeProductModel();
-        String sql = "select * from CafeProduct a  left join Catalogue b on a.catalogueID=b.catalogueID where productID=?";
+        String sql = "select * from CafeProduct where productID=?";
         try {
             dbcon = new DBContext();
             conn = dbcon.getConnection();
@@ -79,10 +110,10 @@ public class ProductDAO {
                  String price = rs.getString(3);
                 String short_description = rs.getString(4);
                 String full_description = rs.getString(5);               
-                  String Catalogue = rs.getString("catalogueName");
+                 
                 //String urlImage = rs.getString(5);
                 String urlImage = "images" + "/" + rs.getString("productImage");
-                vec = new CafeProductModel(id, price, price, short_description, full_description, Catalogue, urlImage);
+                vec = new CafeProductModel(id, name, price, short_description, full_description,  urlImage);
             }
            
         } catch (SQLException ex) {

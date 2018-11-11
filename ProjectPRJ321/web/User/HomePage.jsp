@@ -4,28 +4,23 @@
     Author     : Admin
 --%>
 
-<%@page import="entity.Contact"%>
-<%@page import="entity.Cake"%>
+<%@page import="Model.CafeProductModel"%>
+
 <%@page import="java.util.Vector"%>
-<%@page import="entity.ShareContent"%>
-<%@page import="entity.HomeContent"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    HomeContent homeContent = new HomeContent();
-    Vector<ShareContent> vecShareContent = new Vector<ShareContent>();
-    Vector<Cake> vecCake = new Vector();
-    Contact contact = new Contact();
-    contact = (Contact) request.getAttribute("Contact");
-    vecCake = (Vector<Cake>) request.getAttribute("Cake");
-    homeContent = (HomeContent) request.getAttribute("HomeContent");
-    vecShareContent = (Vector<ShareContent>) request.getAttribute("ShareContent");
+   
+      Vector<CafeProductModel> vecProduct = (Vector<CafeProductModel>) request.getAttribute("Product");
+   
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/Home.css">
+        <link rel="stylesheet" type="text/css" href="CSS/style.css">
+        <link rel="stylesheet" type="text/css" href="CSS/header.css">
         <title>JSP Page</title>
     </head>
     <body>
@@ -37,34 +32,21 @@
                  
                 <!-- Left -->
                 <div id="left-content">
-                    <div id="left-first-content">
-                        <div id="left-first-content-img">
-                            <img src="<%=homeContent.getUrlImage()%>">
-                        </div>
-
-                        <div id="first-content">
-                            <div id="first-content-title">
-                                <%=homeContent.getTitle()%>
-                            </div>
-                            <div id="first-content-main">
-                                <%=homeContent.getContent()%>
-                            </div>
-                        </div>
-                    </div>
+                     <%@include file="introduce.html" %>
 
 
-                    <% if (!vecCake.isEmpty()) {%>
+                    <% if (!vecProduct.isEmpty()) {%>
                     <div id="cake-list">
-                        <%  for (Cake x : vecCake) {%>
+                        <%  for (CafeProductModel x : vecProduct) {%>
                         <div class="cake">
                             <div class="cake-img">
-                                <a href="CakeDetail?id=<%=x.getId()%>"><img src="<%=x.getUrlImage()%>"></a>
+                                  <a href="ProductDetail?id=<%=x.getProductID()%>"><img src="<%=x.getProductImage()%>"></a>
                             </div>
                             <div class="cake-title">
-                                <a href="CakeDetail?id=<%=x.getId()%>"><%=x.getTitle()%></a>
+                                  <a href="ProductDetail?id=<%=x.getProductID()%>"><%=x.getProductName()%></a>
                             </div>
                             <div class="cake-description">
-                                <%=x.getShort_description()%>
+                                <%=x.getProductShortDescription()%>
                             </div>
                         </div>
                         <% } %>
@@ -72,19 +54,7 @@
                     <% }%>
 
 
-                    <div id="contact">
-                        <div id="contact-title">
-                            Visit my cafe
-                        </div>
-                        <div id="contact-description">
-                            <%=contact.getDescription()%>
-                        </div>
-                        <div>
-                            <div id="contact-address">
-                                <%=contact.getAddress()%> <br>Phone: <%=contact.getTel()%>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div id="signature">
                         <div id="sign-title">
@@ -99,28 +69,12 @@
                 </div>
 
                 <!-- Right -->
-                <div id="right-content">
-                    <div class="right-box">
-                        <div class="right-box-title">
-                            <b>Share this page</b>
-                        </div>
-                        <div class="right-box-content">
-                            <ul>
-                                <% for (ShareContent x : vecShareContent) {%>
-                                <li><a href="" >Share on <%=x.getHost()%></a></li>    
-                                        <% }%>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-
-
+                
 
 
             </div>
-            <!-- Footer  -->
-            <%@include file="footer.html" %>
+            <%@include file="footer.jsp" %>
+          
 </div   >
     </body>
 </html>
