@@ -31,8 +31,9 @@
                 <table border="1 solid black" style="table-layout: fixed" >
                     <tr>                        
                         <th>Name</th>
-                        <th>Phone Number</th>                        
-                        <th>Email</th>
+                        <th>Address</th>                        
+                        <th>Phone</th>
+                        <th>Mail</th>
                         <th>image name</th>
                         <th colspan="2"></th>
                     </tr>

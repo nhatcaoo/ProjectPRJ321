@@ -20,7 +20,7 @@
     <body>
         
         <jsp:include page="SideNav.jsp"></jsp:include>
-    
+     <jsp:useBean id="user" class="bean.UserBean"></jsp:useBean>
         <jsp:setProperty name="user" property="*"></jsp:setProperty>
         <c:if test="${not empty param.action &&param.action=='delete'}">
             ${user.deleteUser()}
@@ -32,18 +32,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Phone</th>
+                    <th>Url</th>
                     <th colspan="2"></th>                   
                 </tr>
                 <c:forEach var="s" items="${user.selectAll()}">
                     <tr>
-                        <td>${s.userID}</td>
-                        <td>${s.name}</td>
-                        <td>${s.email}</td>
-                        <td>${s.address}</td>
-                        <td>${s.phone}</td>
+                        <td>${s.useName}</td>
+                        <td>${s.passWd}</td>
+                        <td>${s.url}</td>
+                        
                         <td>
                             <c:url var="delete" value="AdminUser.jsp">
                                 <c:param name="action" value="delete"></c:param>

@@ -5,8 +5,11 @@
  */
 package Controller;
 
+import Model.CafeProductModel;
+import dal.ProductDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,17 +33,33 @@ public class ProductController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+         try {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ProductController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ProductController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+         
+            Vector<CafeProductModel> product = new Vector();
+            ProductDAO daoCake = new ProductDAO();
+
+            int page = 1;
+            try {
+                page = Integer.parseInt(request.getParameter("page"));
+            } catch (Exception e) {
+                page = 1;
+            }
+            int tempPageNumber = daoCake.getNumberCake();//lay so san pham
+            int numberOfPage = tempPageNumber / 3;
+            if (tempPageNumber % 3 != 0) {
+                numberOfPage++;
+            }
+            int temp = 3 * page - 2;
+
+            product = daoCake.getCake(temp);   
+            request.setAttribute("Product", product);
+            request.setAttribute("Page", page);
+            request.setAttribute("NumberOfPage", numberOfPage);
+            getServletContext().getRequestDispatcher("/Product.jsp").forward(request, response);
+        } catch (Exception e) {
+            System.out.println(e);
+            response.sendRedirect("ErrorPage.jsp");
         }
     }
 

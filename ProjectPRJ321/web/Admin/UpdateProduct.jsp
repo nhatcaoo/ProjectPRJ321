@@ -36,11 +36,15 @@
                         <td><input name="price" value="${param.price}"/></td>
                     </tr>
                     <tr>
-                        <th>Type</th>
+                        <th>Short Description</th>
                         <td><input name="typeName" value="${param.typeName}"/></td>
                     </tr>
                     <tr>
-                        <th>ImageName</th>
+                        <th>Full Description</th>
+                        <td><input name="typeName" value="${param.typeName}"/></td>
+                    </tr>
+                    <tr>
+                        <th>Image Name</th>
                         <td><input name="imageName" value="${param.imageName}"/></td>
                     </tr>
                     <tr>
